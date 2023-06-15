@@ -7,7 +7,7 @@ import{ positive }from "./rumus_module/positive_.mjs";
 import { negative } from "./rumus_module/negative_.mjs";
 import { validationFunct , calculateSimetris , calculateEkstrim} from "./rumus_module/more_function.mjs";
 
-$('#result').addEventListener('click' , () => {
+$('#result-button').addEventListener('click' , () => {
     // console.log(validation(inputA , inputB , inputC , action($("#selected-act"))));
     validationFunct (inputA , inputB , inputC , action , $('#selected-act'))
 });
