@@ -9,17 +9,19 @@ export function validationFunct (input1 , input2 , input3 , fulfilled , paramete
 
 export function calculateSimetris(a , b , c , printFunct) {
     const sumbuSimetris = -b / (2 * a);
-    const text1 = `<p>Untuk mencari sumbu simetris x adalah dengan rumus -b </p>`
+    const text1 = `<p>Untuk mencari sumbu simetris x adalah dengan rumus</p>`
+    const step1 = `<p> -b </p>`
     const barrier = `<p class="barrier2">_____</p>`
-    const divider1 = `<p class="divider2">2 × a</p>`
-    const settlement1 = `<p>Maka dapat ditentukan sumbu simetris x adalah ${-b}`
-    const barrier2 = `<p class="barrier2-5">_____</p>`
-    const divider2 = `<p class="divider2-5">2 × ${a}</p>`
+    const divider1 = `<p class="barrier2">2 × a</p>`
+    const settlement1 = `<p>Maka dapat ditentukan sumbu simetris x adalah`
+    const step2 = `<p> ${-b} </p>`
+    const barrier2 = `<p class="barrier2">_____</p>`
+    const divider2 = `<p class="barrier2">2 × ${a}</p>`
     const ress1 = `<p>Maka sumbu simetris dari persamaan ${a}x2 + ${b}x + ${c} = 0</p>`
     const ress2 = `<p>adalah ${sumbuSimetris}`
     const text = [
-        text1 , barrier , divider1 ,
-        settlement1 , barrier2 ,divider2,
+        text1 , step1 , barrier , divider1 ,
+        settlement1 , step2 , barrier2 ,divider2,
         ress1 , ress2
     ];
     printFunct(text)

@@ -1,12 +1,10 @@
-<!DOCTYPE html> result
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quadratic</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="Bostrap v5/bootstrapV5.min.css">
     <link rel="stylesheet" href="style/background.css">
     <link rel="stylesheet" href="style/style.css">
     <!-- FUNCTION BY ME -->
@@ -15,6 +13,7 @@
     <script type="module" src="script/rumus_module/positive_.mjs"></script>
     <script type="module" src="script/rumus_module/negative_.mjs"></script>
     <script type="module" src="script/rumus_module/more_function.mjs"></script>
+    <script type="module" src="script/utility/cmodule.mjs"></script>
 </head>
 <body class="w-100">
 
@@ -27,47 +26,136 @@
         </div>
     </div>
 
-    <div class="about" style="background: #27374D; padding: 10vh 0;">
+    <div class="anouncement" style="background: #27374D; padding: 10vh 0;">
         <div class="text-center m-auto text-light" style="max-width: 800px;">
-            <h1 class="fs-1 fw-bold">ABOUT ME</h1>
-            <p>Hai saya selaku devolopment sekaligus pemilik website ini mengucapkan trima kasih telah menggunakan website kami (Quadric) , website quadric dibuat untuk menyelesaikan soal persaan kuadrat dengan menginputkan variabel a , b dan c</p>
+            <h1 class="fs-1 fw-bold">ANOUNCEMENT</h1>
+            <p>Hai website ini aku buat untuk kalian yang lagi kesusahan untuk mencari jawaban dari soal persamaan kuadrat , aku juga mengucapkan terima kasih telah mengunjungi website yang aku buat , website quadric dibuat untuk menyelesaikan soal persaan kuadrat dengan menginputkan variabel a , b dan c</p>
             <p>dengan begitu anda akan mendapatkan jawaban dari soal prsamaan kuadrat yang menanyakan sumbu simetris , akar , dan nilai ekstrim. Saya mengharapkan agar website ini digunakan untuk belajar bukan untuk menyontek saat ujian ':)'</p>
         </div>
     </div>
+    <div class="container w-100 pt-5 pb-5">
+        <div class="box text-center text-light">
+            <h1 class="fs-1 fw-bold" id="hero-desc">YOU NEED CALCULATOR</h1>
+            <p id="sub-desc">Klik untuk memunculkan mesin kalkulator</p>
+            <button class="btn btn-primary pe-5 ps-5 pt-2 pb-2" id="button-switch">CALCULATOR</button>
+        </div>
+    </div>
 
-    <div id="machine">
+    <div id="machine" class="machine-content">
+        <div class="frame-quadric-machine">        
+            <div class="form-group d-flex flex-column align-items-center text-light">
+                <div class="row mb-2 w-100">
+                    <label for="input-a" class="col-sm-4 col-5 tag">Nilai A :</label>
+                    <input type="number" id="input-a" placeholder="masukkan a" class="col-sm-8 col inp">
+                </div>
+                <div class="row mb-2 w-100">
+                    <label for="input-b" class="col-sm-4 col-5 tag">Nilai B :</label>
+                    <input type="number" id="input-b" placeholder="masukkan b" class="col-sm-8 col inp">
+                </div>
+                <div class="row mb-2 w-100">
+                    <label for="input-c" class="col-sm-4 col-5 tag">Nilai C :</label>
+                    <input type="number" id="input-c" placeholder="masukkan c" class="col-sm-8 col inp">
+                </div>
+                <div class="row w-100 mt-3">
+                    <select name="" id="selected-act" class="col-6" value="akar" 
+                    style="
+                    border-radius: 10px;
+                    padding: 7px;
+                    font-size: 18px;">
+                        <option value="akar">Cari Akar</option>
+                        <option value="simetris">Simetris X</option>
+                        <option value="ekstrim">Titik ekstrim</option>
+                    </select>
+                    <script>
+                        const selectAction = document.getElementById("selected-act");
+                        selectAction.addEventListener('change' , function () {
+                        })
+                    </script>
+                    <button class="col-6 btn btn-primary" id="result-button" role="button" 
+                    style="
+                    border-radius: 10px; 
+                    padding: 7px;
+                    font-size: 18px;">RESULT</button>
+                </div>
+            </div>
+            <div class="result text-light mb-5 mt-3"></div>
+        </div>
 
-        <div class="form-group d-flex flex-column align-items-center text-light">
-            <h1 class="fs-1 fw-bold mb-5">QUADRIC MACHINE</h1>
-            <div class="row w-75 mb-1">
-                <label for="input-a" class="col-4 tag">Masukkan nilai A :</label>
-                <input type="number" id="input-a" placeholder="masukkan a" class="col">
-            </div>
-            <div class="row w-75 mb-1">
-                <label for="input-b" class="col-4 tag">Masukkan nilai B :</label>
-                <input type="number" id="input-b" placeholder="masukkan b" class="col">
-            </div>
-            <div class="row w-75 mb-1">
-                <label for="input-c" class="col-4 tag">Masukkan nilai C :</label>
-                <input type="number" id="input-c" placeholder="masukkan c" class="col">
-            </div>
-
-            <div class="row w-75 mt-3">
-                <select name="" id="selected-act" class="col-6" value="akar">
-                    <option value="akar">Cari Akar</option>
-                    <option value="simetris">Simetris X</option>
-                    <option value="ekstrim">Titik ekstrim</option>
-                </select>
+        <div class="calculator-frame" style="display: none;">
+            <div class="box-calculator text-center">
+                <input type="text" value="0" readonly class="display-screen mb-3" style="width: 98%;"></input>
                 <script>
-                    const selectAction = document.getElementById("selected-act");
-                    selectAction.addEventListener('change' , function () {
+                    $('.display-screen').on('click' , () => {
+                        $('.display-screen').select();
+                        document.execCommand('copy');
+                        alert('result copyed')
                     })
                 </script>
-                <button class="col-6 btn btn-primary" id="result-button" role="button">RESULT</button>
+                <div class="row w-100 m-0">
+                    <button class="col btn-quad-calculate" value="" >х²</button>
+                    <button class="col btn-sqrd-calculate" value="">√</button>
+                    <button class="col btn-clear-calculate" value="">C</button>
+                    <button class="col btn-remove-calculate" value=""><</button>
+                </div>
+
+                <div class="row w-100 m-0">
+                    <button class="col btn-calculate" value="1">1</button>
+                    <button class="col btn-calculate" value="2">2</button>
+                    <button class="col btn-calculate" value="3">3</button>
+                    <button class="col btn-calculate" value="+">+</button>
+                </div>
+
+                <div class="row w-100 m-0">
+                    <button class="col btn-calculate" value="4">4</button>
+                    <button class="col btn-calculate" value="5">5</button>
+                    <button class="col btn-calculate" value="6">6</button>
+                    <button class="col btn-calculate" value="-">-</button>
+                </div>
+
+                <div class="row w-100 m-0">
+                    <button class="col btn-calculate" value="7">7</button>
+                    <button class="col btn-calculate" value="8">8</button>
+                    <button class="col btn-calculate" value="9">9</button>
+                    <button class="col btn-calculate" value="*">x</button>
+                </div>
+
+                <div class="row w-100 m-0">
+                    <button class="col btn-calculate" value=".">.</button>
+                    <button class="col btn-calculate" value="0">0</button>
+                    <button class="col btn-result-calculate" value="">=</button>
+                    <button class="col btn-calculate" value="/">÷</button>
+                </div>
+
             </div>
-            <div class="result w-100 mt-5"></div>
         </div>
+        <script type="module" src="script/utility/calculator.js"></script>
         <script type="module" src="script/script.js"></script>
+        <script type="module">
+            import {validationFunct} from './script/rumus_module/more_function.mjs'
+            import {inputA,inputB,
+                    inputC,action,proges
+                } from './script/script.js'
+            const inputs = $$('.inp');
+            inputs.forEach((element , index)=> {
+                element.on('keypress' , (ev) => {
+                if (element.value != "") {
+                    if (ev.key == "Enter" && index != "2") {
+                        inputs[index + 1].focus();
+                    };
+                    if (index == "2" && ev.key == "Enter") {
+                        if (proges == "aviable") {alert('ada proges yang masih berjalan')}
+                        if (proges == "none") {
+                            validationFunct (inputA , inputB , inputC , action , $('#selected-act'))
+                        }
+                    };
+                };
+                });
+            });
+        </script>
+        <script src="script/utility/machine_switch.js"></script>
     </div>
+    <footer>
+        <span >Create by <a href="https://github.com/RedRubyyy">RedRubyyy</a> or <a href="https://www.instagram.com/nouvalkgndra/">Kagendra</a></span>
+    </footer>
 </body>
 </html>

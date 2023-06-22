@@ -25,8 +25,8 @@ export function positive(a , b , c , printFunct) {
     const text4 = `<p>x1,x2 = ${-b} ± ${sqrt}<p>`
     const barrier4 = generateBarrier(text4);
     // RESULT TXT
-    const finally1 = `<p>x1 = (${-b} + ${sqrt}) / ${divider}      V      (${-b} - ${sqrt}) / ${divider}</p>`
-    const finally2 = `<p>x1 = ${akar1}      V      x2 = ${akar2}</p>`
+    const finally1 = `<p>x1 = (${-b} + ${sqrt}) / ${divider} V x2 = (${-b} - ${sqrt}) / ${divider}</p>`
+    const finally2 = `<p>x1 = ${akar1} V x2 = ${akar2}</p>`
     const finally3 = `<p>Jadi akar-akarnya adalah ${akar1} dan ${akar2}`
 
     const gatheringText = [
