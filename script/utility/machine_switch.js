@@ -4,8 +4,7 @@ const btnSwitch = $('#button-switch');
 const frameQuadric = $('.frame-quadric-machine');
 const frameCalculator = $('.calculator-frame');
 btnSwitch.on('click' , () => {
-    $('.display-screen').value = '0';
-    $('.result').innerHTML = ''
+    $('.calculator-frame').classList.toggle('active-keyboard')
     btnSwitch.textContent == 'CALCULATOR' ? block_calculator() : block_quadric();
 });
 function block_calculator () {
