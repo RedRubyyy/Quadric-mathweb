@@ -65,20 +65,12 @@ body {
 .barrier2 {
     transform: translateY(-10.5px);
 }
-.barrier2-5 {
-    margin-top: -13px;
-    transform: translateX(335px);
-}
 .divider {
     transform: translateX(55px);
 }
 .divider2 {
     transform: translateX(405px);
 }
-.divider2-5 {
-    transform: translateX(335px);
-}
-
 /* Number input style */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
